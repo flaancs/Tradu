@@ -1,0 +1,40 @@
+<body class="grey lighten-2">
+	<div class="header-emojis blue bg-emojis"></div>
+	<div class="container header-emojis-content">
+		<div class="row">
+			<div class="col s12 m12 l8 offset-l2 m-20">
+				<div class="card">
+					<div class="card-header grey lighten-3 grey-text text-darken-3">
+						<h5>Ingresar</h5>
+					</div>
+					<div class="card-content">
+						<div class="row">
+							<div class="col s12 m12 l6 m-20">
+								<form action="/controller/usuarioController.php" method="post">
+									<input type="hidden" name="continue" value="<?php if(isset($_GET['continue'])) { echo $_GET['continue']; } ?>">
+									<div class="input-field col s12">
+										<input type="email" class="browser-default" name="email" placeholder="Email" id="email" maxlength="40" required>
+									</div>
+									<div class="input-field col s12">
+										<input type="password" class="browser-default" name="password" placeholder="Contraseña" id="password" maxlength="30" required>	
+									</div>
+									<div class="input-field col s12 center">
+										<button type="submit" name="btnUser" value="ingresar" class="btn right blue waves-effect full-width waves-light">INGRESAR</button>
+									</div>
+								</form>
+							</div>
+							<div class="col s12 m12 l6 center grey-text text-darken-2 m-20">
+								<h5><strong>¿Aún no tienes cuenta?</strong></h5>
+								<p>Regístrate en <?php echo $f->__get("SITE_NAME"); ?> y aprende lenguaje de señas de una manera entretenida.</p>
+								<a href="/register" class="btn-flat waves-effect full-width"><strong>Crear cuenta</strong></a>
+							</div>
+						</div>
+					</div>
+					<div class="card-action right-align">
+						<a href="/forgot" class="blue-text">¿No recuerdas tu contraseña?</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

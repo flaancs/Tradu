@@ -1,0 +1,50 @@
+<body class="grey lighten-2">
+	<div class="header-emojis blue bg-emojis"></div>
+	<div class="container header-emojis-content">
+		<div class="row">
+			<div class="col s12 m12 l8 offset-l2 m-20">
+				<div class="card">
+					<div class="card-header grey lighten-3 grey-text text-darken-3">
+						<h5>Crea tu perfil</h5>
+					</div>
+					<div class="card-content">
+						<div class="row">
+							<div class="col s12 m12 l12">
+								<form action="/controller/perfilController.php" method="post" enctype="multipart/form-data">
+									<div class="input-field col s12">
+										<input type="text" class="browser-default tooltipped" data-position="top" data-tooltip="Mínimo 4 carácteres" name="username" placeholder="Crea tu nombre de usuario" id="username" minlength="4" pattern="[A-Za-z0-9]{4,20}" maxlength="20" required>
+									</div>
+									<div class="input-field col s6">
+										<input type="text" name="nombres" class="browser-default" placeholder="Ingresa tu nombre" id="nombres" maxlength="15" required>
+									</div>
+									<div class="input-field col s6">
+										<input type="text" name="apellidos" class="browser-default" placeholder="Ingresa tus apellidos" id="apellidos" maxlength="30" required>
+									</div>
+									<div class="input-field col s12">
+										<p class="grey-text">Sube una foto</p>
+										<input type="file" name="foto" id="foto">
+									</div>
+									<div class="input-field col s12">
+										<select name="nivel_señas" class="browser-default" id="nivel_señas">
+											<option selected disabled>¿Tienes conocimiento en lenguaje de señas?</option>
+											<?php
+												$niveles = $db->con->query("SELECT * FROM niveles_lenguaje_señas");
+
+												while ($n = $niveles->fetch_assoc()) {
+													echo "<option value='{$n['idNivel_lenguaje_señas']}'>{$n['nombre']}</option>";
+												}
+											?>
+										</select>
+									</div>
+									<div class="input-field col s12">
+										<button type="submit" name="btnPerfil" value="crear" class="btn right green full-width waves-effect waves-light">Crear perfil</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

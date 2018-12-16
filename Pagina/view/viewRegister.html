@@ -1,0 +1,49 @@
+<body class="grey lighten-2">
+	<div class="header-emojis blue bg-emojis"></div>
+	<div class="container header-emojis-content">
+		<div class="row">
+			<div class="col s12 m12 l10 offset-l1 m-20">
+				<div class="card">
+					<div class="card-header grey lighten-3 grey-text text-darken-3">
+						<h5>Crear cuenta</h5>
+					</div>
+					<div class="card-content">
+						<div class="row">
+							<div class="col s12 m12 l7">
+								<form action="/controller/usuarioController.php" method="post">
+									<div class="input-field col s12">
+										<input type="email" name="email" class="browser-default" placeholder="Ingresa tu email" id="email" maxlength="40" required>
+									</div>
+									<div class="input-field col s6">
+										<input type="password" name="password" data-position="top" data-tooltip="Mínimo 8 carácteres" class="browser-default tooltipped" pattern="[A-Za-z0-9]{8,30}" minlength="8" placeholder="Contraseña" id="password" maxlength="30" required>
+									</div>
+									<div class="input-field col s6">
+										<input type="password" name="repassword" pattern="[A-Za-z0-9]{8,30}" minlength="8" class="browser-default" placeholder="Repetir contraseña" id="repassword" maxlength="30" required>
+									</div>
+									<div class="input-field col s12">
+										<select name="discapacidad" class="browser-default" id="discapacidad">
+											<option selected disabled>Cuentas con dispacidad auditiva</option>
+											<option value="1">Si</option>
+											<option value="0">No</option>
+										</select>
+									</div>
+									<div class="input-field col s12">
+										<button type="submit" name="btnUser" value="registrar" class="btn right green full-width waves-effect waves-light">Crear cuenta</button>
+									</div>
+								</form>
+							</div>
+							<div class="col s12 m12 l5 center-align m-20 grey-text text-darken-2">
+								<h5><strong>¿Ya tienes cuenta?</strong></h5>
+								<p>Incia sesión para poder aprender jugando.</p>
+								<a href="/login" class="btn-flat waves-effect full-width"><strong>Iniciar sesión</strong></a>
+							</div>
+						</div>
+					</div>
+					<div class="card-action center-align">
+						<span>Al crear una cuenta aceptas nuestros <a href="" class="green-text">Términos & condiciones del servicio</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

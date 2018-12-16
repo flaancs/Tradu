@@ -1,0 +1,11 @@
+<div class="home blue bg-emojis" id="home">
+	<div class="container">
+		<?php 
+			if ($f->isLoggedUser()) {
+				include("viewHomeLogged.php");
+			} else {
+				include("viewRegisterHome.html");
+			}
+		?>
+	</div>
+</div>
