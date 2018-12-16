@@ -48,7 +48,6 @@
 		<a href="/" class="brand-logo grey-text text-darken-2"><?php echo $f->__get("SITE_LOGO"); ?></a>
 		<a href="#" data-target="mobile-demo" class="grey-text text-darken-2 sidenav-trigger"><i class="material-icons">menu</i></a>
 		<ul class="right hide-on-med-and-down">
-			<li><a class="tooltipped btn-floating transparent waves-effect z-depth-0" data-position="bottom" data-tooltip="Sobre <?php echo $f->__get("SITE_NAME"); ?>" href="/info"><i class="material-icons grey-text">info</i></a></li>
 			<li><a class="btn green waves-effect waves-light" href="/play">Jugar <i class="material-icons right white-text">local_play</i></a></li>
 			<?php if ($f->isLoggedUser()): ?>
 				<li><img data-target="account_desktop" href="#" src="<?php echo $userData["foto_perfil"]; ?>" class="dropdown-account circle img-nav" alt="<?php echo htmlspecialchars($userData["nombres"]); ?>"></li>
@@ -70,5 +69,4 @@
 	<?php if ($f->isLoggedUser() && $userData["tipo_usuario"] > 1): ?>
 		<li><a href="/panel" class="btn blue waves-effect waves-light">Panel de administración<i class="material-icons">settings</i></a></li>
 	<?php endif ?>
-	<li><a class="grey-text text-darken-3" href="#">Sobre <?php echo $f->__get("SITE_NAME"); ?> <i class="material-icons">info</i></a></li>
 </ul>
